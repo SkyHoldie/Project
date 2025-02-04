@@ -20,7 +20,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>#</th>
+                <th>No</th>
                 <th>kode sub kategori asset</th>
                 <th>Nama Sub Kategori Asset</th>
                 <th>Id Kategori Asset</th>

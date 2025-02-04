@@ -5,10 +5,10 @@
         <h1>Daftar Master Barang</h1>
         <a href="{{ route('admin.master_barang.create') }}" class="btn btn-primary mb-3">Tambah Barang</a>
 
-        <table class="table table-striped">
+        <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>No</th>
                     <th>Nama Barang</th>
                     <th>Kode Barang</th>
                     <th>spesifikasi teknis</th>

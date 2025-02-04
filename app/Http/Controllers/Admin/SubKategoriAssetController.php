@@ -35,7 +35,7 @@ class SubKategoriAssetController extends Controller
 
 
         // dd($validated);
-        return redirect()->route('admin.merk.index')->with('success', 'Merk berhasil diperbarui.');
+        return redirect()->route('admin.sub_kategori_asset.index')->with('success', 'Merk berhasil diperbarui.');
 
 
 
@@ -62,17 +62,25 @@ class SubKategoriAssetController extends Controller
 
     public function update(Request $request, $sub_kategori_asset)
     {
+        // Validasi input
         $request->validate([
-            'kode_sub_kategori_asset' => 'required|string|max:255|exists:tbl_sub_kategori_asset,kode_sub_kategori_asset',
+            'kode_sub_kategori_asset' => 'required|string|max:255',
             'nama_sub_kategori' => 'required|string|max:255',
-            'id_kategori_asset' => 'required|exists:tbl_kategori_asset,id_kategori_asset', // Validasi kategori
+            'id_kategori_asset' => 'required|exists:tbl_kategori_asset,id_kategori_asset', // Pastikan kategori ada
         ]);
 
+        // Cari data yang akan diperbarui
         $subKategoriAsset = SubKategoriAsset::findOrFail($sub_kategori_asset);
-        $subKategoriAsset->update($request->all());
 
+        // Update hanya field yang diizinkan
+        $subKategoriAsset->update([
+            'kode_sub_kategori_asset' => $request->kode_sub_kategori_asset,
+            'nama_sub_kategori' => $request->nama_sub_kategori,
+            'id_kategori_asset' => $request->id_kategori_asset, // Pastikan perubahan kategori tersimpan
+        ]);
 
-        return redirect()->route('admin.sub_kategori_asset.index')->with('success', 'Sub Kategori Asset berhasil diperbarui.');
+        // Redirect ke index dengan pesan sukses
+        return redirect()->route('admin.sub_kategori_asset.index')->with('success', 'Sub Kategori berhasil diperbarui');
     }
 
     public function destroy($sub_kategori_asset)

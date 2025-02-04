@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\KategoriAsset;
+use App\Models\SubKategoriAsset;
 use Illuminate\Http\Request;
 
 
@@ -71,6 +72,11 @@ class KategoriAssetController extends Controller
     public function destroy($id)
     {
         $kategori_asset = KategoriAsset::findOrFail($id);
+
+        // Hapus semua sub kategori terkait terlebih dahulu
+        SubKategoriAsset::where('id_kategori_asset', $id)->delete();
+
+        // Setelah sub kategori dihapus, hapus kategori aset
         $kategori_asset->delete();
 
         return redirect()->route('admin.kategori_asset.index')->with('success', 'Kategori Asset berhasil dihapus!');

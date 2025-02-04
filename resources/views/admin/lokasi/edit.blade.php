@@ -7,12 +7,12 @@
         @csrf
         @method('PUT')
         <div class="mb-3">
-            <label>Kode Lokasi</label>
-            <input type="text" name="kode_lokasi" class="form-control" value="{{ $lokasi->kode_lokasi }}" required maxlength="20">
-        </div>
-        <div class="mb-3">
             <label>Nama Lokasi</label>
             <input type="text" name="nama_lokasi" class="form-control" value="{{ $lokasi->nama_lokasi }}" required maxlength="20">
+        </div>
+        <div class="mb-3">
+            <label>Kode Lokasi</label>
+            <input type="text" name="kode_lokasi" class="form-control" value="{{ $lokasi->kode_lokasi }}" required maxlength="20">
         </div>
         <div class="mb-3">
             <label>Keterangan</label>

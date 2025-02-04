@@ -7,7 +7,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>#</th>
+                <th>No</th>
                 <th>Nama Barang</th>
                 <th>Lama Depresiasi</th>
                 <th>Depresiasi Barang</th> <!-- Tambahan baru -->

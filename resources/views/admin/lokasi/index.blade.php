@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Daftar Lokasi</h1>
         <a href="{{ route('admin.lokasi.create') }}" class="btn btn-primary">Tambah Lokasi</a>
-        <table class="table mt-3">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Nama Lokasi</th>

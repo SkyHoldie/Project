@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <h1>Daftar Satuan</h1>
-    <a href="{{ route('admin.satuan.create') }}" class="btn btn-primary">Tambah Satuan</a>
-    <table class="table">
+    <a href="{{ route('admin.satuan.create') }}" class="btn btn-primary mb-3">Tambah Satuan</a>
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>No</th>
